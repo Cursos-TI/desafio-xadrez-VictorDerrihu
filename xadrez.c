@@ -1,32 +1,29 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+int main(){
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+  // Variáveis para controlar os movimentos das peças
+  int torre = 0; 
+  int bispo = 0;
+  int rainha;
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+  // Loop while: torre se move para a direita 5 vezes
+  while (torre < 5)
+  {
+    printf("A Torre movimento paraa direção : Direita\n");
+    torre++;  // incrementa o contador da torre
+  };
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+  // Loop do-while: bispo se move para cima e para a direita 5 vezes
+  do{
+    printf("O Bispo andou para a direção : Cima,Direita\n");
+    bispo++; // incrementa o contador do bispo
+  }while (bispo < 5);
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+  // Loop for: rainha se move para a esquerda 8 vezes
+  for(rainha=0; rainha<8; rainha++){
+    printf("A Rainha andou para a direção : Esquerda\n");
+  };
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
-
-    return 0;
+  return 0; 
 }
