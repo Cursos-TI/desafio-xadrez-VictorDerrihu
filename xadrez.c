@@ -6,6 +6,7 @@ int main(){
   int torre = 0; 
   int bispo = 0;
   int rainha;
+  int cavalo=1;
 
   // Loop while: torre se move para a direita 5 vezes
   while (torre < 5)
@@ -24,6 +25,19 @@ int main(){
   for(rainha=0; rainha<8; rainha++){
     printf("A Rainha andou para a direção : Esquerda\n");
   };
+
+// Loop aninhado: Um movimento em L para o cavalo 
+  while (cavalo ==1)
+  {
+    for(int i =0; i<2; i++){
+      printf("Cima\n");
+    }
+    printf("Direita\n");
+   cavalo--;
+  };
+  
+
+
 
   return 0; 
 }
