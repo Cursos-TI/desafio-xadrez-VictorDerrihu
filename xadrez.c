@@ -1,43 +1,68 @@
 #include <stdio.h>
 
-int main(){
-
-  // Variáveis para controlar os movimentos das peças
-  int torre = 0; 
-  int bispo = 0;
-  int rainha;
-  int cavalo=1;
-
-  // Loop while: torre se move para a direita 5 vezes
-  while (torre < 5)
-  {
-    printf("A Torre movimento paraa direção : Direita\n");
-    torre++;  // incrementa o contador da torre
-  };
-
-  // Loop do-while: bispo se move para cima e para a direita 5 vezes
-  do{
-    printf("O Bispo andou para a direção : Cima,Direita\n");
-    bispo++; // incrementa o contador do bispo
-  }while (bispo < 5);
-
-  // Loop for: rainha se move para a esquerda 8 vezes
-  for(rainha=0; rainha<8; rainha++){
-    printf("A Rainha andou para a direção : Esquerda\n");
-  };
-
-// Loop aninhado: Um movimento em L para o cavalo 
-  while (cavalo ==1)
-  {
-    for(int i =0; i<2; i++){
-      printf("Cima\n");
-    }
+// Torre com recursão 
+void moverTorre(int casas) {
+    if (casas == 0) return; 
     printf("Direita\n");
-   cavalo--;
-  };
-  
+    moverTorre(casas - 1); 
+}
 
+// Rainha com recursão
+void moverRainha(int casas) {
+    if (casas == 0) return;
+    printf("Esquerda\n");
+    moverRainha(casas - 1);
+}
 
+// Bispo recursão e loop aninhado
+void moverBispo(int vertical, int horizontal) {
+    for (int i = 0; i < vertical; i++) {          
+        for (int j = 0; j < horizontal; j++) {   
+            printf("Cima, Direita\n");
+        }
+    }
+}
 
-  return 0; 
+// Cavalo loop aninhado
+void moverCavalo(int movimentos) {
+    for (int k = 0; k < movimentos; k++) {   
+        for (int i = 0; i < 2; i++) {       
+            printf("Cima\n");
+        }
+        for (int j = 0; j < 1; j++) {       
+            printf("Direita\n");
+        }
+    }
+}
+
+// Inicialização do programa 
+int main() {
+    // Definição dos valores
+    int casasTorre   = 5;
+    int casasRainha  = 8;
+    int bispoVertical = 5;
+    int bispoHorizontal = 1; 
+    int movimentosCavalo = 1;
+
+    // Torre
+    printf("Movimentos da Torre:\n");
+    moverTorre(casasTorre);
+    printf("\n");
+
+    // Rainha
+    printf("Movimentos da Rainha:\n");
+    moverRainha(casasRainha);
+    printf("\n");
+
+    // Bispo
+    printf("Movimentos do Bispo:\n");
+    moverBispo(bispoVertical, bispoHorizontal);
+    printf("\n");
+
+    // Cavalo
+    printf("Movimentos do Cavalo:\n");
+    moverCavalo(movimentosCavalo);
+    printf("\n");
+
+    return 0;
 }
